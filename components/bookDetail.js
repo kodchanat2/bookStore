@@ -1,11 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableHighlight } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 class BookDetail extends React.Component {
     
     render(){
+        const link =()=> Actions.detail({...this.props});
         return (
-            <TouchableHighlight onPress={()=>{console.log('click');}}>
+            <TouchableHighlight onPress={link}>
                 <View style={styles.container}>
                     <Image style={styles.img} source={{uri: this.props.book_image}} resizeMode='contain'/>
                     <View style={styles.description}>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import BookList from './components/bookList';
+import DetailPage from './components/detailPage';
 import { Router, Scene } from 'react-native-router-flux';
 
 export default class App extends React.Component {
@@ -10,6 +11,7 @@ export default class App extends React.Component {
         <Router>
           <Scene key="root">
             <Scene key="list" component={BookList} title="List" initial={true} />
+            <Scene key="detail" component={DetailPage} />
           </Scene>
         </Router>
       </View>
