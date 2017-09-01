@@ -7,7 +7,7 @@ class BookDetail extends React.Component {
     render(){
         const link =()=> Actions.detail({...this.props});
         return (
-            <TouchableHighlight onPress={link}>
+            <TouchableHighlight onPress={link} underlayColor="#fff7">
                 <View style={styles.container}>
                     <Image style={styles.img} source={{uri: this.props.book_image}} resizeMode='contain'/>
                     <View style={styles.description}>
