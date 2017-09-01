@@ -13,6 +13,9 @@ class BookList extends React.Component {
         super(props);
         let ds = new ListView.DataSource({rowHasChanged: (r1,r2)=>(r1 !== r2) })
         this.state = {dataSource: ds.cloneWithRows(data)};
+        
+    }
+    componentWillMount = () =>{
         fetch('http://api.nytimes.com/svc/books/v3/lists/hardcover-fiction?response-format=json&api-key=73b19491b83909c7e07016f4bb4644f9:2:60667290')
         .then((res)=>res.json())
         .then((res)=>{
