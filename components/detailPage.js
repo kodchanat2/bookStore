@@ -41,8 +41,8 @@ const styles = StyleSheet.create({
     upSide:{
         padding:5,
         flexDirection: 'row',
-        borderBottomWidth: 3,
-        borderColor: '#eee'
+        borderBottomWidth: 2,
+        borderColor: '#ddd'
     },
     rightSide:{
         flex:1,
