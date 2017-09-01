@@ -8,12 +8,25 @@ const data = [
   ];
 
 class BookList extends React.Component {
- 
-  render() {
-    return (
-        <Text>Hi</Text>
-    );
-  }
+    constructor(props){
+        super(props);
+        let ds = new ListView.DataSource({rowHasChanged: (r1,r2)=>(r1 !== r2) })
+        this.state = {dataSource: ds.cloneWithRows(data)};
+    }
+
+    _renderRow(rowData){
+      return( <View>
+                    <Text>{this.props.author}</Text>
+                    <Text>{this.props.title}</Text>
+                </View>
+      );
+    }
+
+    render() {
+        return (
+            <ListView dataSource={this.state.dataSource} renderRow={this._renderRow}/>
+        );
+    }
 }
 
 export default BookList;
