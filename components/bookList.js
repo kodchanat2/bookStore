@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import BookDetail from './bookDetail';
 
 const data = [
     { title: "SEEING RED", author: "Sandra Brown", book_image: "https://s1.nyt.com/du/books/images/9781455572106.jpg"},
@@ -15,11 +16,7 @@ class BookList extends React.Component {
     }
 
     _renderRow(rowData){
-      return( <View>
-                    <Text>{this.props.author}</Text>
-                    <Text>{this.props.title}</Text>
-                </View>
-      );
+        return <BookDetail {...rowData}/>;
     }
 
     render() {
