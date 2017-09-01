@@ -1,17 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableHighlight } from 'react-native';
 
 class BookDetail extends React.Component {
     
     render(){
         return (
-            <View style={styles.container}>
-                <Image style={styles.img} source={{uri: this.props.book_image}} resizeMode='contain'/>
-                <View style={styles.description}>
-                    <Text style={styles.author}>{this.props.author}</Text>
-                    <Text style={styles.title}>{this.props.title}</Text>
+            <TouchableHighlight onPress={()=>{console.log('click');}}>
+                <View style={styles.container}>
+                    <Image style={styles.img} source={{uri: this.props.book_image}} resizeMode='contain'/>
+                    <View style={styles.description}>
+                        <Text style={styles.author}>{this.props.author}</Text>
+                        <Text style={styles.title}>{this.props.title}</Text>
+                    </View>
                 </View>
-            </View>
+            </TouchableHighlight>
         );
     }
 }
