@@ -10,7 +10,7 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <Router>
           <Scene key="root">
-            <Scene key="list" component={BookList} title="List" initial={true} />
+            <Scene key="list" component={BookList} title="Hardcover Fiction Book Ranking" initial={true} />
             <Scene key="detail" component={DetailPage} />
           </Scene>
         </Router>
