@@ -9,6 +9,7 @@ class BookDetail extends React.Component {
         return (
             <TouchableHighlight onPress={link} underlayColor="#fff7">
                 <View style={styles.container}>
+                    <Text style={styles.rank}>{this.props.rank}</Text>
                     <Image style={styles.img} source={{uri: this.props.book_image}} resizeMode='contain'/>
                     <View style={styles.description}>
                         <Text style={styles.author}>{this.props.author}</Text>
@@ -42,6 +43,13 @@ const styles = StyleSheet.create({
     },
     title:{
         fontSize: 20,
+        fontWeight: 'bold'
+    },
+    rank:{
+        fontSize: 15,
+        width: 18,
+        alignSelf: 'center',
+        textAlign: 'right',
         fontWeight: 'bold'
     },
     author:{
